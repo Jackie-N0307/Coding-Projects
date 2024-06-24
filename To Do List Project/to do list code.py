@@ -14,7 +14,9 @@ print("---------------------------")
 
 #opening the file to read it
 def read_list():
-    with open('to.do.list.txt','r') as file_r:
+    file_path = r"To Do List Project\to.do.list.txt"
+
+    with open(file_path,'r') as file_r:
         count = 1
         print("** Jackie's To Do List**")
 
@@ -27,9 +29,10 @@ def add_list(rank, activity):
     current_line = 1
     rank = int(rank)
     activity = str(activity)
-    
-    with open('to.do.list.txt','r') as file_r:
-        with open('to.do.list.new.txt','w') as file_w:
+    file_path = r"To Do List Project\to.do.list.txt"
+
+    with open(file_path,'r') as file_r:
+        with open(r"To Do List Project\to.do.list.new.txt",'w') as file_w:
 
             #rewrites the to do list until it reaches line of desired new string
             for line in file_r:
@@ -44,9 +47,9 @@ def add_list(rank, activity):
                 file_w.write(f"{activity}\n")
 
     #getting rid of the old list and updating it 
-    os.remove('to.do.list.txt')
-    old_name = "to.do.list.new.txt"
-    new_name = "to.do.list.txt"
+    os.remove(r"To Do List Project\to.do.list.txt")
+    old_name = r"To Do List Project\to.do.list.new.txt"
+    new_name = r"To Do List Project\to.do.list.txt"
 
     os.rename(old_name,new_name)
     read_list()                    
@@ -58,8 +61,8 @@ def delete(rank):
     rank = int(rank)
 
     #opening the files
-    with open('to.do.list.txt','r') as file_r:
-        with open('to.do.list.new.txt','w') as file_w:
+    with open(r"To Do List Project\to.do.list.txt",'r') as file_r:
+        with open(r"To Do List Project\to.do.list.new.txt",'w') as file_w:
 
             #rewrites the to do list until it reaches line of desired new string
             for line in file_r:
@@ -75,9 +78,9 @@ def delete(rank):
                     current_line += 1
 
     # since a new one is made the old must be deleted
-    os.remove('to.do.list.txt')
-    old_name = "to.do.list.new.txt"
-    new_name = "to.do.list.txt"
+    os.remove(r"To Do List Project\to.do.list.txt")
+    old_name = r"To Do List Project\to.do.list.new.txt"
+    new_name = r"To Do List Project\to.do.list.txt"
     os.rename(old_name,new_name)
     read_list()
 
@@ -86,7 +89,7 @@ def motivation():
     count = 1
 
     #keeps reading through each line until it reaches desired random number
-    with open('motivational.txt','r') as file_r:
+    with open(r'To Do List Project\motivational.txt','r') as file_r:
         for line in file_r:
             if count == random_line:
                 print(line,end = '')
