@@ -7,7 +7,7 @@ alpha_api = "RKE6GIOQI4JM7LYK"
 client = OpenAI(
                     organization='org-eXvNlOiMfgKeziZdN6Qd30Ag',
                     project='proj_gAyJmP46wZbkdOLl4bDL3Gvo',
-                    api_key="sk-proj-zuTnUPLmdMZz9xHnMAF9T3BlbkFJkFxJFvXffSP8Sl17h8dl"
+                    api_key= None
                 )
 
 def generate_summary_ONE_article(URL):
